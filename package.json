@@ -1,0 +1,19 @@
+{
+  "name": "elated-slipper",
+  "version": "0.0.1",
+  "description": "elated-slipper",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ]
+}
