@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>poster • aframe-ar</title>
+    <meta name="description" content="poster • aframe-ar">
+    <!-- First, include whichever version of A-Frame you like. -->
+    <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+    <!-- Next, include three.ar.js; add the speech recognition polyfill if you want. -->
+    <script src="https://rawgit.com/google-ar/three.ar.js/master/dist/three.ar.js"></script>
+    <!-- Last, include aframe-ar. -->
+    <script src="https://rawgit.com/chenzlabs/aframe-ar/master/dist/aframe-ar.min.js"></script>
+
+    <script src="show-at-image-marker.js"></script>
+  </head>
+  <body>
+    <div style="position:absolute; top:8px; right:8px; z-index:999999">
+      <a href="http://cdn.glitch.com/5faa540f-1ef0-40d6-a191-5215a51c3aca%2Fhubs.png?1528753564704">Image</a>
+    </div>
+    
+    <a-scene ar="worldSensing: true">
+      
+      <!-- When found, this is placed where the logo is detected -->
+      <a-entity id="logo" 
+                show-at-image-marker="
+                    name:hubs;
+                    src:http://cdn.glitch.com/5faa540f-1ef0-40d6-a191-5215a51c3aca%2Fhubs.png?1528753564704;
+                    physicalWidth:0.20
+                    ">
+        <a-entity 
+          gltf-model="http://cdn.glitch.com/5faa540f-1ef0-40d6-a191-5215a51c3aca%2FDuckyMesh.glb?1528761455765"
+          position="0 0 0">
+          <a-animation attribute="rotation" from="0 -180 0" to="0 179 0" dur="90000" repeat="indefinite"></a-animation>
+        </a-entity>
+      </a-entity>
+      
+      <a-assets>
+        <!-- preload image -->
+        <img crossorigin="anonymous"
+             src="http://cdn.glitch.com/5faa540f-1ef0-40d6-a191-5215a51c3aca%2Fhubs.png?1528753564704"></img>
+      </a-assets>
+    </a-scene>
+  </body>
+</html>
